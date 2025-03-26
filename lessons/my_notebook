@@ -1,0 +1,23 @@
+import sys
+import os
+import importlib
+module_path='/workspaces/BME3053C-Spring-2025'
+# Add the directory containing your module to the Python path
+if module_path not in sys.path:
+    sys.path.append(module_path)
+
+  
+import importlib
+import my_module
+   
+# Reload the specific submodule
+importlib.reload(my_module.math_operations)
+   
+# Then reload the main module
+importlib.reload(my_module)
+   
+# Now import the updated functions
+from my_module import add, subtract, multiply, divide
+
+print(add(5, 3))
+
